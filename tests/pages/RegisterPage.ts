@@ -1,6 +1,6 @@
 import {Selector, t} from "testcafe";
 
-class RegisterPage{
+class RegisterPage {
     private readonly genderRadioButton: Selector
     private readonly firstName: Selector
     private readonly lastName: Selector
@@ -9,10 +9,10 @@ class RegisterPage{
     private readonly confirmPassword: Selector
     private readonly registerButton: Selector
 
-        constructor(){
+    constructor() {
         this.genderRadioButton = Selector("#gender-male")
-        this.firstName = Selector("#FirstName")
         this.lastName = Selector("#LastName")
+        this.firstName = Selector("#FirstName")
         this.email = Selector("#Email")
         this.password = Selector("#Password")
         this.confirmPassword = Selector("#ConfirmPassword")
@@ -20,26 +20,33 @@ class RegisterPage{
         this.registerButton = Selector("#register-button")
     }
 
-    async clickGender(){
+    async clickGender() {
         await t.click(this.genderRadioButton)
     }
-    async setFirstName(firstName: string){
+
+    async setFirstName(firstName: string) {
         await t.typeText(this.firstName, firstName)
     }
-    async setLastName(lastName: string){
+
+    async setLastName(lastName: string) {
         await t.typeText(this.lastName, lastName)
     }
-    async setEmail(email: string){
+
+    async setEmail(email: string) {
         await t.typeText(this.email, email)
     }
-    async setPassword(password: string){
+
+    async setPassword(password: string) {
         await t.typeText(this.password, password)
     }
-    async setConfirmPassword(confirmPassword: string){
+
+    async setConfirmPassword(confirmPassword: string) {
         await t.typeText(this.confirmPassword(), confirmPassword)
     }
-    async clickRegister(){
+
+    async clickRegister() {
         await t.click(this.registerButton)
     }
 }
+
 export default new RegisterPage()
