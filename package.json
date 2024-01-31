@@ -1,0 +1,16 @@
+{
+  "name": "testcafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "rimraf dist && tsc && testcafe chrome dist/tests/test/%npm_config_file%"
+  },
+  "author": "Alina",
+  "license": "ISC",
+  "dependencies": {
+    "rimraf": "^5.0.5",
+    "testcafe": "3.5.0",
+    "typescript": "5.3.3"
+  }
+}

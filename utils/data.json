@@ -1,0 +1,8 @@
+
+  {
+    "firstName": "John",
+    "lastName": "Stone",
+    "email": "stone.j@gmail.com",
+    "password": "test123456",
+    "confirmPassword": "test123456"
+  }
