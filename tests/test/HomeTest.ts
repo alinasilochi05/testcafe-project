@@ -1,13 +1,15 @@
 import HomePage from "../pages/HomePage";
-import {Selector} from "testcafe";
+import {ClientFunction, Selector} from "testcafe";
 
 fixture`Home tests`
     .page('https://demo.nopcommerce.com/')
 
+const getPageUrl = ClientFunction(()=> window.location.href)
+
 test('The user can filter products by search box', async t => {
     await HomePage.setSearchBox('Nikon')
     await HomePage.clickSearch()
-    await t.expect(Selector('title').innerText).contains('nopCommerce demo store')
+    await t.expect(getPageUrl()).contains('example.com');
 
 })
 
